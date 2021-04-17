@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #82bdb0 58%, #b8947c 93%);
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+img {
+  max-width: 100%;
+}
+.main-container {
+  background: white;
+  box-shadow: 0 0 10px 2px #3333331a;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 400px;
+  /* height: 620px; */
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+}
+header input {
+  border-radius: 3px;
+  border: none;
+  background: #daece8;
+  box-shadow: 2px 2px 6px black;
+  padding: 0.4rem 1rem;
+}
+header button {
+  margin-left: 8px;
+  font-size: 1.5rem;
+  color: #667571;
+  text-shadow: 0.2px 0.5px 6px rgba(83, 83, 83, 0.651);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+#refresh {
+  position: sticky;
+  margin-right: 6px;
+  font-size: 1.5rem;
+  color: #667571;
+  text-shadow: 0.2px 0.5px 6px rgba(83, 83, 83, 0.651);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.saved-container {
+  background: #9bc8dd;
+  padding: 0.3rem 1rem;
+  padding-top: 0%;
+  /* border: 1px solid black; */
+  text-align: center;
+  border-radius: 1.2%;
+}
+.saved-container h3 {
+  margin: 0.5rem;
+  padding: 1px;
+}
+.saved-meals {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.saved-meals li {
+  width: 80px;
+  margin: 0.2rem;
+  font-family: inherit;
+  text-transform: capitalize;
+  position: relative;
+}
+.saved-meals li .clear {
+  /* visibility: hidden; */
+  font-size: 1.1rem;
+  opacity: 0;
+  background-color: transparent;
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  border: none;
+  cursor: pointer;
+}
+
+.saved-meals li:hover .clear {
+  opacity: 1;
+}
+.saved-meals li img {
+  border: 2px solid whitesmoke;
+  box-shadow: 0 0 3px 5px #3333331a;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 1px;
+  cursor: pointer;
+  transition: border 0.3s linear;
+}
+.saved-meals li span {
+  display: inline-block;
+  font-size: 0.9rem;
+  /* line-height: 0.1rem; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 75px;
+}
+
+.saved-meals li img:hover {
+  border: 2px solid darkorchid;
+}
+.saved-meals li span:hover {
+  /* border: 2px solid red; */
+  font-weight: bold;
+  white-space: pre-wrap;
+  width: auto;
+}
+
+.meal {
+  border-radius: 3px;
+  box-shadow: 0 0 3px 5px #3333331a;
+  margin: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+.meal-header {
+  position: relative;
+}
+.meal-header .random {
+  position: absolute;
+  top: 10px;
+  background: rgb(206, 191, 191);
+  padding: 0.2rem 1rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 5px;
+}
+.meal-header img {
+  object-fit: cover;
+  height: 270px;
+  width: 100%;
+}
+.meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+.meal-body h4 {
+  margin: 0;
+}
+.meal-body button {
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  color: #667571;
+  cursor: pointer;
+  outline: none;
+}
+.meal-body button i:active {
+  font-size: 1.5rem;
+  /* color: red; */
+}
+.active {
+  color: rgb(134, 81, 187);
+  text-shadow: 1px 2px 9px rebeccapurple;
+}
+.No-Result h3 {
+  background: darkred;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: inherit;
+  font-size: 0.7rem;
+}
+.meal-info-container {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.meal-info-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.meal-info {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 5px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  padding: 0 2rem;
+}
+.meal-info h1 {
+  text-align: center;
+}
+.meal-info #close-popup {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 3px solid white;
+  font-size: 1.4rem;
+  position: sticky;
+  cursor: pointer;
+  top: 1rem;
+  left: 30.5rem;
+  text-shadow: 1px 1px 2px white;
+  /* right: 1rem; */
+}

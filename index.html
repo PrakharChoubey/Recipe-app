@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecipeApp</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <button
+          title="Reload Random Recipe"
+          id="refresh"
+          onClick="window.location.reload();"
+        >
+          <i class="fa fa-retweet"></i>
+        </button>
+        <!-- <h3>hello</h3> -->
+        <input
+          placeholder="Search for ingredients,Recipe"
+          type="text"
+          id="search-term"
+        />
+        <button title="Search" id="search">
+          <i class="fas fa-search"></i>
+        </button>
+      </header>
+      <div class="saved-container">
+        <h3>Saved Meals</h3>
+        <ui class="saved-meals" id="SavedMeals">
+          <!-- dynamically Added by JS -->
+        </ui>
+      </div>
+      <div class="meals" id="meals">
+        <!-- Dynamically Added by JS -->
+      </div>
+    </div>
+    <div class="meal-info-container hidden" id="meal-popup">
+      <div id="meal-info" class="meal-info">
+        <button id="close-popup"><i class="fas fa-times"></i></button>
+        <div class="meal-info-content" id="meal-info-content">
+          <!-- Dynamically Added By Js -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
