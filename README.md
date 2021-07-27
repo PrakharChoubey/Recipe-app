@@ -1,5 +1,6 @@
 # Recipe-app
 https://js-recipe.netlify.app/
+API = https://www.themealdb.com/api.php
 
 A Racipe app which allows user to save his/her favourite Recipe(in local storage).
 - Random meals can be generated 
